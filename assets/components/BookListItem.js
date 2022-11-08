@@ -1,12 +1,17 @@
-import { StyleSheet, Text, View, Pressable } from 'react-native';
+import { StyleSheet, Text, View, Pressable, Image } from 'react-native';
 import DropShadow from "react-native-drop-shadow"; //wooo doesn't work for whatever ungodly reason
 
 const BookListItem = (props) => {
     return (
         <View>
-            <Text style={styles.h2}>{props.title}</Text>
-            <Text style={styles.author}>By {props.author}</Text>
-            <Text style={styles.description}>{props.description}</Text>
+            <View style={styles.topColumn}>
+                <Image style={styles.bookImage} source={props.image}/>
+                <View style={styles.basicInfo}>
+                    <Text style={styles.h2}>{props.title}</Text>
+                    <Text style={styles.author}>By {props.author}</Text>
+                    <Text style={styles.description}>{props.description}</Text>
+                </View>
+            </View>
             <View style={styles.row}>
                 <Text style={styles.isbn}>ISBN {props.isbn}</Text>
                     <Pressable style={styles.readBtn}>
@@ -19,6 +24,17 @@ const BookListItem = (props) => {
 }
 
 const styles = StyleSheet.create({
+    topColumn: {
+        flexDirection: 'row',
+    },
+    basicInfo: {
+        flex: 5,
+        marginLeft: 20,
+    },
+    bookImage: {
+        aspectRatio: 1/1.5,
+        flex: 2,
+    },
     h2: {
         fontSize: 30,
         fontWeight: 'bold',
