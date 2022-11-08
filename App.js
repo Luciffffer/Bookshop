@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, ScrollView, Image } from 'react-native';
+import DropShadow from "react-native-drop-shadow";
 
 import BookListItem from './assets/components/BookListItem';
 
@@ -15,7 +16,8 @@ const bookList = [
     name: "De verhulstjes",
     author: "Gert Verhulst",
     description: "i sometimes sincerely wish i were dead u know. Maybe it's just a me thing but idk. Just really do not like my life. If i could die i would",
-    isbn: "0-8694-3823-9"
+    isbn: "0-8694-3823-9",
+    image: require("./assets/images/last-wish.jpg")
   }
 ]
 
@@ -24,10 +26,12 @@ export default function App() {
     <ScrollView style={styles.container}>
       <View style={styles.top}>
         <Text style={styles.h1}>Bookshop</Text>
-        <View style={styles.topSide}>
-          <Image style={styles.icon} source={require("./assets/images/shopping_cart.png")}></Image>
-          <Text style={styles.cartNumber}>1</Text>
-        </View>
+        <DropShadow>
+          <View style={styles.topSide}>
+            <Image style={styles.icon} source={require("./assets/images/shopping_cart.png")}></Image>
+            <Text style={styles.cartNumber}>1</Text>
+          </View>
+        </DropShadow>
       </View>
       {bookList.map((props) => <BookListItem key={props.name} title={props.name} author={props.author} description={props.description} isbn={props.isbn} image={props.image}></BookListItem>)}
       <StatusBar style="auto" />
