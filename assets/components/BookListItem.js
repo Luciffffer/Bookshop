@@ -7,14 +7,14 @@ const BookListItem = (props) => {
             <View style={styles.topColumn}>
                 <Image style={styles.bookImage} source={props.image}/>
                 <View style={styles.basicInfo}>
-                    <Text style={styles.h2}>{props.title}</Text>
+                    <Text style={styles.h2} onPress={() => console.log("Title pressed")}>{props.title}</Text>
                     <Text style={styles.author}>By {props.author}</Text>
                     <Text style={styles.description}>{props.description}</Text>
                 </View>
             </View>
             <View style={styles.row}>
                 <Text style={styles.isbn}>ISBN {props.isbn}</Text>
-                    <Pressable style={styles.readBtn}>
+                    <Pressable style={styles.readBtn} onPress={() => console.log("Time to read")}>
                         <Text style={{ fontWeight: 'bold', fontSize: 16, fontFamily: 'monospace', }}>READ</Text>
                     </Pressable>
             </View>
@@ -26,6 +26,7 @@ const BookListItem = (props) => {
 const styles = StyleSheet.create({
     topColumn: {
         flexDirection: 'row',
+        paddingVertical: 10,
     },
     basicInfo: {
         flex: 5,
@@ -34,6 +35,15 @@ const styles = StyleSheet.create({
     bookImage: {
         aspectRatio: 1/1.5,
         flex: 2,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 3,
+        },
+        shadowOpacity: 0.29,
+        shadowRadius: 4.65,
+
+        elevation: 7,
     },
     h2: {
         fontSize: 30,
@@ -77,7 +87,7 @@ const styles = StyleSheet.create({
     line: {
         height: 3,
         backgroundColor: 'black',
-        marginVertical: 20,
+        marginVertical: 25
     },
 })
 

@@ -8,6 +8,7 @@ import BookListItem from './assets/components/BookListItem';
 import bookList from './assets/data/bookList.js';
 
 export default function App() {
+  //CUSTOM FONT DOESNT WORK FOR SOME UNGODLY HORRIFIC REASON pls help
   const [fontsLoaded] = useFonts({
     'jetBrainsMono': require('./assets/fonts/jetBrainsMono.ttf'),
   });
@@ -58,18 +59,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 30,
     paddingBottom: 5,
+    overflow: "visible",
   },
   h1: {
     fontSize: 45,
     fontWeight: 'bold',
-    fontFamily: 'jetBrainsMono',
     flex: 4,
   },
   icon: {
     aspectRatio: 1/1,
     width: 35,
     marginRight: 15,
-    marginTop: 10,
   },
   cartNumber: {
     fontSize: 25,
@@ -79,9 +79,10 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "flex-end",
-    backgroundColor: "#EEF4E6",
     borderRadius: 50,
     paddingHorizontal: 20,
-    paddingVertical: 0,
+    paddingVertical: 3,
+    borderWidth: 2,
+    borderColor: "black",
   },
 });
