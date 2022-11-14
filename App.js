@@ -8,7 +8,7 @@ import BookListItem from './assets/components/BookListItem';
 import bookList from './assets/data/bookList.js';
 
 export default function App() {
-  //CUSTOM FONT DOESNT WORK FOR SOME UNGODLY HORRIFIC REASON pls help
+  //works but not in the emulator
   const [fontsLoaded] = useFonts({
     'jetBrainsMono': require('./assets/fonts/jetBrainsMono.ttf'),
   });
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     padding: 15,
   },
   top: {
-    marginTop: 30,
+    marginTop: 35,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -62,14 +62,15 @@ const styles = StyleSheet.create({
     overflow: "visible",
   },
   h1: {
-    fontSize: 45,
+    fontFamily: 'jetBrainsMono',
+    fontSize: 40,
     fontWeight: 'bold',
     flex: 4,
   },
   icon: {
     aspectRatio: 1/1,
-    width: 35,
-    marginRight: 15,
+    width: 30,
+    marginRight: 5,
   },
   cartNumber: {
     fontSize: 25,

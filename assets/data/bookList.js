@@ -26,6 +26,13 @@ const bookList = [
         description: "If you know the enemy and know yourself, you need not fear the result of a hundred battles. If you know yourself but...",
         isbn: "1-5998-6977-2",
         image: require("../images/the-art-of-war.jpg")
+      },
+      {
+        name: "The Midnight Library",
+        author: "Matt Halo",
+        description: "Someone dies and uhm... She wakes up in a library and there she meets someone, her old school librarian. She's like bitch...",
+        isbn: "6-6646-6666-9",
+        image: require("../images/the-midnight-library.jpg")
       }
   ]
 

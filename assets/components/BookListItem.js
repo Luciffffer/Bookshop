@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
     h2: {
         fontSize: 30,
         fontWeight: 'bold',
+        fontFamily: 'jetBrainsMono',
     },
     author: {
         fontSize: 16,
